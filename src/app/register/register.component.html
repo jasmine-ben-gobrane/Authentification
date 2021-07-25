@@ -1,0 +1,94 @@
+
+<div class="block">
+    <h1>Sign Up</h1>
+    <form [formGroup]="user" (ngSubmit)="onSubmit()">
+         <div class="espace">
+             <div class="espace">
+                 <div class="user-box">
+                    <input formControlName="nom" type="text" name="Nom" required />
+                    <label >Nom</label>
+                        <div *ngIf="control('nom').invalid && control('nom').touched" class="error">
+                            <div *ngIf="control('nom')?.errors?.required" class="error">
+                                Nom Obligatoire
+                            </div>
+                            <div *ngIf="control('nom')?.errors?.pattern" class="error">
+                                Nom doit comporter seulement des lettres
+                            </div>
+                    </div>  
+                 </div>
+            </div>
+            <div class="user-box">
+                <input formControlName="pren" type="text" name="prenom" required/>
+                <label >Prénom</label>
+                <div *ngIf="control('pren').invalid && control('pren').touched" class="error">
+                    <div *ngIf="control('pren')?.errors?.required" class="error">
+                        Prénom Obligatoire
+                    </div>
+                    <div *ngIf="control('pren')?.errors?.pattern" class="error">
+                        Prenom doit comporter seulement des lettres
+                    </div>
+                 </div>  
+            </div>
+        </div>       
+            <table border=0 style="margin-bottom:15px; margin-top:5px;">
+                <tr>
+                    <td>
+                        <div required>
+                            <label >Gender: </label>
+                            <input formControlName="G"type="radio" class="gender" name="G" value="M" >
+                            <label>Homme</label>
+                            <input formControlName="G"type="radio" class="gender" name="G" value="F">
+                            <label>Femme</label>
+                            <div *ngIf="control('G').invalid && control('G').touched" class="error">
+                                <div *ngIf="control('G')?.errors?.required" class="error">
+                                    Genre Obligatoire
+                                </div>
+                             </div>  
+                        </div> 
+                    </td>
+                    <td>
+                        <div >
+                            <label>Date de Naissance</label>
+                            <input formControlName="NS"required class="NS" type="date" name="dateNais"/>
+                        </div>  
+                        <div *ngIf="control('NS').invalid && control('NS').touched" class="error">
+                            <div *ngIf="control('NS')?.errors?.required" class="error">
+                                Date de Naisssance Obligatoire
+                            </div>
+                         </div>  
+                    </td>
+                </tr>
+            </table>
+
+            <div  class="espace">
+                <div class="user-box" >
+                    <input formControlName="mail" type="mail"  name="Email" required />
+                    <label >E-mail</label>
+                  </div> 
+                  <div *ngIf="control('mail').invalid && control('mail').touched" class="error">
+                    <div *ngIf="control('mail')?.errors?.required" class="error">
+                        E-mail Obligatoire
+                    </div>
+                 </div>  
+            </div>
+
+            <div class="espace">
+            <div class="user-box espace">
+                    <input formControlName="mdp"type="password"  name="mdp" minlength="8" maxlength="100" required/>
+                    <label >Mot de passe</label> 
+                    <div *ngIf="control('mdp').invalid && control('mdp').touched" class="error">
+                        <div *ngIf="control('mdp')?.errors?.required" class="error">
+                            mot de passe Obligatoire
+                        </div>
+                     </div> 
+            </div> 
+        </div>
+    
+        <button class="con" type="submit" [disabled]="user.invalid" (click)="gotopage('login')">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            s'inscrire</button><br>
+    </form>
+</div>

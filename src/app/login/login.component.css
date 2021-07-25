@@ -1,0 +1,190 @@
+  .block{
+     position:absolute;
+     width: 500px;
+     height: 425px;
+     background: rgba(0,0,0);
+     padding: 40px;
+     color:#fff;
+     left: calc(50% - 300px);
+     right: calc(50% - 150px);
+    top: 150px;
+     padding-top:10px;
+     border-radius: 10px;
+     font-family: sans-serif;
+ }
+ .block a{
+   color:pink;
+ }
+ .block h1{
+     
+     margin: 0 0 30px;
+     padding-top: 25px;
+     font-size:30px;
+     color: #fff;
+     text-align: center;
+     
+ }
+ .block .user-box {
+     position: relative;
+   }
+ 
+ .block .user-box input {
+     width: 100%;
+     padding: 10px 0;
+     font-size: 15px;
+     color: #fff;
+     margin-bottom: 30px;
+     border: none;
+     border-bottom: 1px solid #fff;
+     outline: none;
+     background: transparent;
+   }
+
+
+   .block .user-box label {
+     position: absolute;
+     top:0;
+     left: 0;
+     padding: 10px 0;
+     font-size: 15px;
+     color: #fff;
+     pointer-events: none;
+     transition: .5s;
+   }
+ 
+ .block .user-box input:focus ~ label,
+ .block .user-box input:valid ~ label {
+   top: -20px;
+   left: 0;
+   color: pink;
+   font-size: 12px;
+ }
+ .block form .con{
+     position: relative;
+   display: inline-block;
+   padding: 10px 20px;
+   color: #fff;
+   font-size: 13px;
+   text-decoration: none;
+   text-transform: uppercase;
+   overflow: hidden;
+   transition: .5s;
+   margin-top: 10px;
+   letter-spacing: 2px;
+   background: transparent;
+   border:transparent;
+ }
+ .block .con:hover {
+     background: pink;
+     border-radius: 5px;
+     box-shadow: 0 0 5px rgba(255, 192, 203, 0.644),
+                 0 0 25px rgba(255, 192, 203, 0.644),
+                 0 0 50px rgba(255, 192, 203, 0.644),
+                 0 0 100px rgba(255, 192, 203, 0.644);
+ 
+   }
+   .block .con span {
+     position: absolute;
+     display: block;
+   }
+ .block .con span:nth-child(1) {
+     top: 0;
+     left: -100%;
+     width: 100%;
+     height: 2px;
+     background: linear-gradient(90deg, transparent, pink);
+     animation: btn-anim1 1s linear infinite;
+   }
+   @keyframes btn-anim1 {
+     0% {
+       left: -100%;
+     }
+     50%,100% {
+       left: 100%;
+     }
+   }
+   .block .con span:nth-child(2) {
+     top: -100%;
+     right: 0;
+     width: 2px;
+     height: 100%;
+     background: linear-gradient(180deg, transparent, pink);
+     animation: btn-anim2 1s linear infinite;
+     animation-delay: .25s
+   }
+   
+   @keyframes btn-anim2 {
+     0% {
+       top: -100%;
+     }
+     50%,100% {
+       top: 100%;
+     }
+   }
+   
+   .block .con span:nth-child(3) {
+     bottom: 0;
+     right: -100%;
+     width: 100%;
+     height: 2px;
+     background: linear-gradient(270deg, transparent,pink);
+     animation: btn-anim3 1s linear infinite;
+     animation-delay: .5s
+   }
+   
+   @keyframes btn-anim3 {
+     0% {
+       right: -100%;
+     }
+     50%,100% {
+       right: 100%;
+     }
+   }
+   
+   .block .con span:nth-child(4) {
+     bottom: -100%;
+     left: 0;
+     width: 2px;
+     height: 100%;
+     background: linear-gradient(360deg, transparent, pink);
+     animation: btn-anim4 1s linear infinite;
+     animation-delay: .75s
+   }
+   
+   @keyframes btn-anim4 {
+     0% {
+       bottom: -100%;
+     }
+     50%,100% {
+       bottom: 100%;
+     }
+   }
+ .block:before,
+ .block:after{
+     content:'';
+     position: absolute;
+     border-radius: 10px;
+     top:-3px;
+     left:-3px;
+     width: calc(100% + 6px);
+     height: calc(100% + 6px);
+     background: linear-gradient(45deg, blue, pink, purple,blue);
+     z-index: -1;
+     background-size: 400%;
+     animation: borderbg 40s linear infinite;
+ }
+ @keyframes borderbg{
+     0%{
+         background-position:0 0;
+     }
+     50%{
+         background-position: 400% 0;
+     }
+     100%{
+         background-position: 0 0;
+     }
+ }
+ .block:after{
+     filter:blur(40px);
+ }
+ 

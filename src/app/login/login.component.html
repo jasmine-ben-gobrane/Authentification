@@ -1,0 +1,30 @@
+
+<div class="block">
+    <h1>Login</h1>
+    <form>
+        <div class="user-box">
+          <input type="mail"  name="Email" required />
+          <label >E-mail</label>
+        </div>
+  
+        <div class="user-box">
+          <input type="password" name="mdp" required/>
+          <label >Mot de passe</label>
+        </div>
+  
+        <a href="" class="mdpo">mot de passe oublié</a><br><br>
+        <button class="con" type="button" (click)="gotopage('acceuil')">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          se connecter</button><br>
+        <button class="con" (click)="gotopage('register')" >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          S'inscrire</button><br><br>
+    </form>
+  </div>
+  <router-outlet></router-outlet>
